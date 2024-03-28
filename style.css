@@ -1,0 +1,36 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 98dvh;
+  width: 98dvw;
+}
+div {
+  border: black solid 1px;
+}
+
+.container{
+  display: flex;
+  flex-flow: column wrap;
+  flex: 1;
+  max-height: 800px;
+  max-width: 800px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap:1px;
+}
+
+.line{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.item{
+  display: flex;
+}
+.item:hover{
+  background-color: rebeccapurple;
+}
+
