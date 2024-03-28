@@ -8,10 +8,25 @@
     <title>Sketchpad</title>
   </head>
   <body>
+    <h2>Sketchpad</h2>
     <div class="container"></div>
-    <div class="buttons">
-      <input class="slider" type="range" min="2" max="100" value="16" />
-      <button>Reset</button>
+    <div class="inputs">
+      <div>
+        <label for="inp_color">Color RGB</label>
+        <input id="inp_color" type="color" value="#252525"/>
+        <label for="inp_size">Dimension slider</label>
+        <input
+          id="inp_size"
+          class="slider"
+          type="range"
+          min="2"
+          max="100"
+          value="16"
+        />
+        <p id="curr_size">Size: 16x16</p>
+      </div>
+      <button id="btn_reset">Reset</button>
     </div>
   </body>
+  <footer>Copyright©️ Júlio César Costa 2024</footer>
 </html>
