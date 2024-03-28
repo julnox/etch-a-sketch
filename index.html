@@ -3,17 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <script defer src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title>Sketchpad</title>
   </head>
-  <body>
+  <header>
     <h2>Sketchpad</h2>
+  </header>
+  <body>
     <div class="container"></div>
     <div class="inputs">
       <div>
         <label for="inp_color">Color RGB</label>
-        <input id="inp_color" type="color" value="#252525"/>
+        <input id="inp_color" type="color" value="#252525" />
         <label for="inp_size">Dimension slider</label>
         <input
           id="inp_size"
@@ -25,6 +33,7 @@
         />
         <p id="curr_size">Size: 16x16</p>
       </div>
+      <button id="btn_rainbow">Rainbow</button>
       <button id="btn_reset">Reset</button>
     </div>
   </body>
