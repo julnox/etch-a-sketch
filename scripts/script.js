@@ -60,7 +60,8 @@ slider.addEventListener("change", () => {
   drawGrid(slider.value);
 });
 
-btnRainbow.addEventListener("click", async () => {
+btnRainbow.addEventListener("click", () => {
+  clearInterval(intervalID);
   intervalID = setInterval(() => {
     currColor = getRandomColor();
     updateColor();
