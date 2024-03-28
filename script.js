@@ -1,9 +1,11 @@
 const divContainer = document.querySelector(".container");
 const btnReset = document.querySelector("#btn_reset");
+const btnRainbow = document.querySelector("#btn_rainbow");
 const colorPicker = document.querySelector("#inp_color");
 const slider = document.querySelector("#inp_size");
 const currentRange = document.querySelector("#curr_size");
 let currColor = colorPicker.value;
+let intervalID;
 
 function drawGrid(dimension) {
   divContainer.replaceChildren();
@@ -21,25 +23,54 @@ function drawGrid(dimension) {
     }
     divContainer.append(line);
   }
+  updateColor();
+}
+
+drawGrid(slider.value);
+
+function updateColor() {
   items = document.querySelectorAll(".line > .item");
   items.forEach((item) => {
-    item.addEventListener("mouseover", () => {
+    item.addEventListener("mouseenter", () => {
       item.style.backgroundColor = currColor;
     });
   });
 }
 
-drawGrid(slider.value);
+function getRandomColor() {
+  let letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+function resetGrid(){
+  clearInterval(intervalID);
+  currColor = colorPicker.value;
+}
 
 colorPicker.addEventListener("change", () => {
-  currColor = colorPicker.value;
+  resetGrid();
 });
 
 slider.addEventListener("change", () => {
+  resetGrid();
   drawGrid(slider.value);
 });
 
+btnRainbow.addEventListener("click", async () => {
+  intervalID = setInterval(() => {
+    currColor = getRandomColor();
+    updateColor();
+  }, 500);
+});
+
 btnReset.addEventListener("click", () => {
+  resetGrid();
+  colorPicker.value = "#252525";
+  currColor = colorPicker.value;
   slider.value = 16;
   drawGrid(slider.value);
 });
