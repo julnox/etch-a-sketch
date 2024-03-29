@@ -1,0 +1,146 @@
+:root {
+  --crimson: crimson;
+  --dark-grey: #8d8d8d;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 1px 1px 2px grey;
+}
+
+.grid {
+  border-left: black solid 1px;
+  border-bottom: black solid 1px;
+  display: flex;
+  flex-flow: column wrap;
+  height: 500px;
+  width: 500px;
+  margin-inline: auto;
+}
+
+.grid-line {
+  border-top: black solid 1px;
+  display: flex;
+  flex: 1;
+  width: auto;
+  flex-wrap: wrap;
+}
+
+.grid-item {
+  border-right: black solid 1px;
+  flex: 1;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+}
+
+.inp_1 {
+  display: flex;
+  margin-top: 1rem;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inp_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  background-color: var(--crimson);
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-height: 40px;
+  list-style: none;
+  padding: 0.5em;
+  position: relative;
+  text-align: center;
+  transition: color 100ms;
+}
+
+button:hover,
+button:focus {
+  background-color: rgb(228, 95, 121);
+}
+
+
+.slider {
+  appearance: none;
+  width: 250px;
+  min-height: 25px;
+  background: var(--dark-grey);
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  max-width: 25px;
+  min-height: 25px;
+  background: var(--crimson);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  max-width: 25px;
+  min-height: 25px;
+  background: var(--crimson);
+  cursor: pointer;
+}
+
+footer {
+  justify-content: center;
+  background-color: var(--crimson);
+  text-shadow: 1px 1px 2px black;
+  margin-top: auto;
+  text-align: center;
+  color: white;
+  width: auto;
+}
+
+footer img{
+ height: 1em;
+}
+footer a{
+  text-decoration: none;
+  color: aqua;
+}
+
+@media (max-width: 500px){
+  .grid{
+    height: 400px;
+    width: 400px;
+  }
+}
+@media (max-width: 400px){
+  .grid{
+    height: 300px;
+    width: 300px;
+  }
+}
